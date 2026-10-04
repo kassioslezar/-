@@ -114,8 +114,15 @@
             line-height: 1.8;
         }
 
+        .doctor-declaration {
+            margin-top: 15px;
+            font-size: 17px;
+            line-height: 2.2; /* مسافة مريحة للكتابة بين السطور */
+        }
+
         .single-line {
             white-space: nowrap;
+            margin-bottom: 10px; /* زيادة المسافة العمودية بين السطر الأول والثاني */
         }
 
         .signature-title {
@@ -128,11 +135,11 @@
 
         .divider {
             border-bottom: 1.5px dashed #000;
-            margin: 25px 0;
+            margin: 20px 0;
         }
 
         .checkbox-group {
-            margin: 15px 25px;
+            margin: 12px 25px;
             font-size: 17px;
             line-height: 1.8;
         }
@@ -228,8 +235,8 @@
         <div class="signature-title">
             <u>الإمضاء</u>
         </div>
-        <!-- مساحة فارغة لخط التوقيع -->
-        <div style="height: 25px;"></div>
+        <!-- مساحة فارغة أكبر لتوقيع الطالب -->
+        <div style="height: 40px;"></div>
 
         <div class="divider"></div>
 
@@ -237,7 +244,7 @@
             مساحة تملأ من طرف طبيب القلب
         </div>
 
-        <div class="declaration">
+        <div class="doctor-declaration">
             <div class="single-line">يشهد الممضي أسفله طبيب القلب والأوعية الدموية...........................................................................</div>
             <div>بعد فحص السيد:..........................................................................أنه</div>
         </div>
