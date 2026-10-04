@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>شهادة طبية لممارسة الأنشطة الرياضية</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&display=swap');
+
+        * {
+            box-sizing: border-box;
+            font-family: 'Amiri', serif;
+        }
+
+        body {
+            background-color: #f4f6f9;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .no-print {
+            background: #ffffff;
+            padding: 15px 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            text-align: center;
+            max-width: 800px;
+            width: 100%;
+        }
+
+        .btn-print {
+            background-color: #27ae60;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn-print:hover {
+            background-color: #219150;
+        }
+
+        /* صفحة A4 للطباعة */
+        .paper {
+            background: white;
+            width: 210mm;
+            min-height: 297mm;
+            padding: 20mm;
+            box-shadow: 0 0 10px rgba(0,0,0,0.15);
+            position: relative;
+        }
+
+        .header {
+            text-align: center;
+            font-size: 16px;
+            font-weight: bold;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        .doc-title {
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            border: 2px solid #000;
+            padding: 8px 20px;
+            width: fit-content;
+            margin: 0 auto 30px auto;
+            border-radius: 20px;
+        }
+
+        .section-box {
+            border: 1.5px solid #000;
+            padding: 6px 20px;
+            width: fit-content;
+            margin: 0 auto 20px auto;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+            font-size: 18px;
+            display: flex;
+            align-items: baseline;
+        }
+
+        .form-group label {
+            font-weight: bold;
+            min-width: 80px;
+        }
+
+        .form-group input[type="text"] {
+            border: none;
+            border-bottom: 1px dotted #000;
+            outline: none;
+            flex-grow: 1;
+            font-size: 18px;
+            font-family: 'Amiri', serif;
+            padding: 2px 8px;
+            background: transparent;
+        }
+
+        .declaration {
+            margin-top: 30px;
+            font-size: 18px;
+            line-height: 2;
+        }
+
+        .signature-title {
+            text-align: left;
+            margin-top: 20px;
+            margin-left: 50px;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .divider {
+            border-bottom: 1px dashed #000;
+            margin: 40px 0;
+        }
+
+        .checkbox-group {
+            margin: 15px 40px;
+            font-size: 18px;
+            line-height: 2;
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 10px;
+        }
+
+        .custom-box {
+            width: 22px;
+            height: 22px;
+            border: 1.5px solid #000;
+            display: inline-block;
+        }
+
+        /* إعدادات الطباعة */
+        @media print {
+            body {
+                background: none;
+                padding: 0;
+            }
+
+            .no-print {
+                display: none;
+            }
+
+            .paper {
+                box-shadow: none;
+                width: 100%;
+                height: 100%;
+                padding: 10mm;
+            }
+
+            input[type="text"] {
+                border-bottom: 1px dotted #000 !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="no-print">
+        <h2>استمارة الشهادة الطبية لممارسة الأنشطة الرياضية</h2>
+        <p>يرجى ملء الخانات الخاصة بك (الاسم، اللقب، العنوان) ثم الضغط على زر <b>طباعة</b> في الأسفل.</p>
+        <button class="btn-print" onclick="window.print()">طباعة الاستمارة / حفظ كـ PDF</button>
+    </div>
+
+    <div class="paper">
+        <!-- الترويسة -->
+        <div class="header">
+            الجمهورية الجزائرية الديمقراطية الشعبية<br>
+            وزارة التعليم العالي والبحث العلمي<br>
+            الديوان الوطني للخدمات الجامعية<br>
+            مديرية الخدمات الجامعية ميلة
+        </div>
+
+        <!-- عنوان الوثيقة -->
+        <div class="doc-title">
+            شهادة طبية لممارسة الأنشطة الرياضية
+        </div>
+
+        <!-- مساحة الطالب -->
+        <div class="section-box">
+            مساحة تملأ من طرف الطالب
+        </div>
+
+        <div class="form-group">
+            <label>الإسم:</label>
+            <input type="text" placeholder="اكتب إسمك هنا...">
+        </div>
+
+        <div class="form-group">
+            <label>اللقب:</label>
+            <input type="text" placeholder="اكتب لقبك هنا...">
+        </div>
+
+        <div class="form-group">
+            <label>العنوان:</label>
+            <input type="text" placeholder="اكتب عنوانك السكني هنا...">
+        </div>
+
+        <div class="declaration">
+            أنا الطالب الممضي أسفله أشهد بأنني<br>
+            لم أصب بفقدان للوعي ولو لمدة قصيرة خلال ممارسة أي نشاط رياضي سابقا ولم أعاني من أي مرض لم أصرح به.
+        </div>
+
+        <div class="signature-title">
+            الإمضاء
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- مساحة طبيب القلب -->
+        <div class="section-box">
+            مساحة تملأ من طرف طبيب القلب
+        </div>
+
+        <div class="declaration">
+            يشهد الممضي أسفله طبيب القلب والأوعية الدموية...............................................................................................<br>
+            بعد فحص السيد:..........................................................................أنه
+        </div>
+
+        <div class="checkbox-group">
+            <div class="checkbox-item">
+                <span class="custom-box"></span>
+                <span>يستطيع ممارسة الرياضة</span>
+            </div>
+            <div class="checkbox-item">
+                <span class="custom-box"></span>
+                <span>لا يستطيع ممارسة الرياضة</span>
+            </div>
+        </div>
+
+        <div style="margin-top: 30px; font-size: 18px;">
+            بـ:......................................... بتاريخ: ......./......./............
+        </div>
+
+        <div class="signature-title" style="margin-top: 40px;">
+            إمضاء وختم طبيب القلب
+        </div>
+    </div>
+
+</body>
+</html>
