@@ -5,25 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>شهادة طبية لممارسة الأنشطة الرياضية</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap');
 
         * {
             box-sizing: border-box;
             font-family: 'Amiri', serif;
         }
 
-        body {
-            background-color: #f4f6f9;
+        html, body {
             margin: 0;
-            padding: 15px;
+            padding: 0;
+            background-color: #f4f6f9;
+        }
+
+        body {
             display: flex;
             flex-direction: column;
             align-items: center;
+            padding: 10px;
         }
 
         .no-print {
             background: #ffffff;
-            padding: 12px 20px;
+            padding: 12px 25px;
             border-radius: 8px;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             margin-bottom: 15px;
@@ -41,56 +45,49 @@
             font-weight: bold;
             border-radius: 5px;
             cursor: pointer;
-            transition: 0.3s;
         }
 
-        .btn-print:hover {
-            background-color: #219150;
-        }
-
-        /* صفحة A4 محدثة للطباعة في صفحة واحدة */
         .paper {
             background: white;
             width: 210mm;
             min-height: 297mm;
-            padding: 12mm 15mm;
+            padding: 15mm 20mm;
             box-shadow: 0 0 10px rgba(0,0,0,0.15);
-            position: relative;
         }
 
         .header {
             text-align: center;
-            font-size: 15px;
+            font-size: 16px;
             font-weight: bold;
-            line-height: 1.4;
-            margin-bottom: 15px;
+            line-height: 1.5;
+            margin-bottom: 20px;
         }
 
         .doc-title {
             text-align: center;
-            font-size: 21px;
+            font-size: 22px;
             font-weight: bold;
             border: 2px solid #000;
-            padding: 5px 18px;
+            padding: 6px 20px;
             width: fit-content;
-            margin: 0 auto 18px auto;
-            border-radius: 18px;
+            margin: 0 auto 20px auto;
+            border-radius: 12px;
         }
 
         .section-box {
             border: 1.5px solid #000;
             padding: 4px 15px;
             width: fit-content;
-            margin: 0 auto 12px auto;
-            font-size: 16px;
+            margin: 0 auto 15px auto;
+            font-size: 17px;
             font-weight: bold;
-            border-radius: 12px;
+            border-radius: 8px;
             text-align: center;
         }
 
         .form-group {
-            margin-bottom: 10px;
-            font-size: 17px;
+            margin-bottom: 12px;
+            font-size: 18px;
             display: flex;
             align-items: baseline;
         }
@@ -102,12 +99,12 @@
 
         .form-group input[type="text"] {
             border: none;
-            border-bottom: 1px dotted #000;
+            border-bottom: 1.5px dotted #000;
             outline: none;
             flex-grow: 1;
-            font-size: 17px;
+            font-size: 18px;
             font-family: 'Amiri', serif;
-            padding: 2px 5px;
+            padding: 2px 8px;
             background: transparent;
         }
 
@@ -119,19 +116,19 @@
 
         .signature-title {
             text-align: left;
-            margin-top: 15px;
+            margin-top: 20px;
             margin-left: 40px;
             font-weight: bold;
             font-size: 17px;
         }
 
         .divider {
-            border-bottom: 1px dashed #000;
-            margin: 20px 0;
+            border-bottom: 1.5px dashed #000;
+            margin: 25px 0;
         }
 
         .checkbox-group {
-            margin: 10px 30px;
+            margin: 15px 25px;
             font-size: 17px;
             line-height: 1.8;
         }
@@ -146,22 +143,23 @@
         .custom-box {
             width: 20px;
             height: 20px;
-            border: 1.5px solid #000;
+            border: 2px solid #000;
             display: inline-block;
         }
 
-        /* إعدادات الطباعة الدقيقة لصفحة واحدة */
         @media print {
             @page {
                 size: A4 portrait;
-                margin: 0;
+                margin: 0 !important;
             }
 
             html, body {
-                height: 100%;
-                margin: 0 !important;
+                width: 210mm !important;
+                height: 297mm !important;
+                background: white !important;
                 padding: 0 !important;
-                background: none;
+                margin: 0 !important;
+                overflow: hidden !important;
             }
 
             .no-print {
@@ -171,14 +169,11 @@
             .paper {
                 box-shadow: none !important;
                 width: 100% !important;
-                height: 100vh !important;
-                min-height: auto !important;
-                padding: 10mm 15mm !important;
+                height: 100% !important;
+                padding: 12mm 18mm !important;
                 margin: 0 !important;
-            }
-
-            input[type="text"] {
-                border-bottom: 1px dotted #000 !important;
+                page-break-inside: avoid !important;
+                break-inside: avoid !important;
             }
         }
     </style>
@@ -187,12 +182,10 @@
 
     <div class="no-print">
         <h2>استمارة الشهادة الطبية لممارسة الأنشطة الرياضية</h2>
-        <p>يرجى ملء الخانات الخاصة بك (الاسم، اللقب، العنوان) ثم الضغط على زر <b>طباعة</b>.</p>
         <button class="btn-print" onclick="window.print()">طباعة الاستمارة / حفظ كـ PDF</button>
     </div>
 
     <div class="paper">
-        <!-- الترويسة -->
         <div class="header">
             الجمهورية الجزائرية الديمقراطية الشعبية<br>
             وزارة التعليم العالي والبحث العلمي<br>
@@ -200,12 +193,10 @@
             مديرية الخدمات الجامعية ميلة
         </div>
 
-        <!-- عنوان الوثيقة -->
         <div class="doc-title">
             شهادة طبية لممارسة الأنشطة الرياضية
         </div>
 
-        <!-- مساحة الطالب -->
         <div class="section-box">
             مساحة تملأ من طرف الطالب
         </div>
@@ -226,8 +217,7 @@
         </div>
 
         <div class="declaration">
-            أنا الطالب الممضي أسفله أشهد بأنني<br>
-            لم أصب بفقدان للوعي ولو لمدة قصيرة خلال ممارسة أي نشاط رياضي سابقا ولم أعاني من أي مرض لم أصرح به.
+            أنا الطالب الممضي أسفله أشهد بأنني لم أصب بفقدان للوعي ولو لمدة قصيرة خلال ممارسة أي نشاط رياضي سابقا ولم أعاني من أي مرض لم أصرح به.
         </div>
 
         <div class="signature-title">
@@ -236,7 +226,6 @@
 
         <div class="divider"></div>
 
-        <!-- مساحة طبيب القلب -->
         <div class="section-box">
             مساحة تملأ من طرف طبيب القلب
         </div>
